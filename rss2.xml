@@ -9,8 +9,45 @@
     <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>阿东的BLOG</description>
-    <pubDate>Sun, 26 Sep 2021 09:39:32 GMT</pubDate>
+    <pubDate>Sun, 26 Sep 2021 14:47:16 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>大一疑问解惑</title>
+      <link>http://example.com/2021/09/26/%E5%A4%A7%E4%B8%80%E7%96%91%E9%97%AE%E8%A7%A3%E6%83%91/</link>
+      <guid>http://example.com/2021/09/26/%E5%A4%A7%E4%B8%80%E7%96%91%E9%97%AE%E8%A7%A3%E6%83%91/</guid>
+      <pubDate>Sun, 26 Sep 2021 14:47:16 GMT</pubDate>
+      
+      
+      
+      
+      
+      
+      <comments>http://example.com/2021/09/26/%E5%A4%A7%E4%B8%80%E7%96%91%E9%97%AE%E8%A7%A3%E6%83%91/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.com/2021/09/26/%E5%A4%A7%E4%B8%80%E7%9A%84%E4%B8%80%E4%BA%9B%E7%96%91%E9%97%AE/</link>
+      <guid>http://example.com/2021/09/26/%E5%A4%A7%E4%B8%80%E7%9A%84%E4%B8%80%E4%BA%9B%E7%96%91%E9%97%AE/</guid>
+      <pubDate>Sun, 26 Sep 2021 14:46:53 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;大一的一些疑问&quot;&gt;&lt;a href=&quot;#大一的一些疑问&quot; class=&quot;headerlink&quot; title=&quot;大一的一些疑问&quot;&gt;&lt;/a&gt;大一的一些疑问&lt;/h1&gt;&lt;h2 id=&quot;1、C语言和C-语言到底有什么区别&quot;&gt;&lt;a href=&quot;#1、C语言和C-语言到底有什么区</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="大一的一些疑问"><a href="#大一的一些疑问" class="headerlink" title="大一的一些疑问"></a>大一的一些疑问</h1><h2 id="1、C语言和C-语言到底有什么区别"><a href="#1、C语言和C-语言到底有什么区别" class="headerlink" title="1、C语言和C++语言到底有什么区别"></a>1、C语言和C++语言到底有什么区别</h2><p>:page_with_curl:这个问题我可以百度一个非常标准的答案，但是有点晦涩难懂，如果大家开始学习的语言是C++语言，那么刚开始接触的知识跟C语言基本上一模一样，但毕竟是C++,多少有点区别。</p><p>:page_with_curl:我给大家写两个语言的hello world来展现一下这微弱的区别。</p><p><strong>C语言</strong></p><pre><code class="c">#include&lt;stdio.h&gt;void main()&#123;    printf(&quot;HEllo World&quot;);    return 0;&#125;</code></pre><p><strong>C++</strong></p><pre><code class="c++">#include&lt;iostream&gt;using namespace std;int mian()&#123;    cout&lt;&lt;&quot;Hello World&quot;&lt;&lt;endl;    return 0;&#125;</code></pre><p>C语言和C++语言在我们刚接触的时候，估计一个月之内的课，这就是他们最大的区别。一</p><p>:point_right:一个是头文件#include&lt;stdio.h&gt;—C语言</p><p>:point_right:一个是头文件#include<iostream>—C++</p><p><strong>这个从我们的知识来说</strong>（本质是有区别的），只是写法上不同（但是我们暂时没必要理解的那么深），他们的含义都是包含你待会要使用的函数库，当然，两个头文件里面包含的函数库也不同，所以导致下面的区别</p><p>:point_right:一个是向控制台输入的语法printf()—C语言</p><p>:point_right:一个是向控制台输入的语法cout&lt;&lt;—C++</p><p>:love_letter:因为我们引用的头文件不同导致包含的函数不同所以使用的输出语法不同，但是他们都可以打成向控制台输出数据：</p><p><strong>Hello World</strong></p><p><strong>注意</strong>：这个只是你初学的时候C语言和C++语言的不同，🌱本质上C++完全是一个新的语言，后面会有大量不一样的地方，🔑 但是刚开始学习我们没必要看那么远，只需要知道这两个语言刚开始学的时候是很像的！</p>]]></content:encoded>
+      
+      
+      
+      
+      <comments>http://example.com/2021/09/26/%E5%A4%A7%E4%B8%80%E7%9A%84%E4%B8%80%E4%BA%9B%E7%96%91%E9%97%AE/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Java常用类</title>
