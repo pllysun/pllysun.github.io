@@ -9,8 +9,31 @@
     <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>阿东的BLOG</description>
-    <pubDate>Sat, 25 Sep 2021 14:51:37 GMT</pubDate>
+    <pubDate>Sun, 26 Sep 2021 05:37:05 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title></title>
+      <link>http://example.com/2021/09/26/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
+      <guid>http://example.com/2021/09/26/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</guid>
+      <pubDate>Sun, 26 Sep 2021 05:36:02 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;title: Java多线程&lt;/p&gt;
+&lt;h1 id=&quot;Java多线程&quot;&gt;&lt;a href=&quot;#Java多线程&quot; class=&quot;headerlink&quot; title=&quot;Java多线程&quot;&gt;&lt;/a&gt;Java多线程&lt;/h1&gt;&lt;h3 id=&quot;多线程的创建方式一、继承Thread类&quot;&gt;&lt;a</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>title: Java多线程</p><h1 id="Java多线程"><a href="#Java多线程" class="headerlink" title="Java多线程"></a>Java多线程</h1><h3 id="多线程的创建方式一、继承Thread类"><a href="#多线程的创建方式一、继承Thread类" class="headerlink" title="多线程的创建方式一、继承Thread类"></a>多线程的创建方式一、继承Thread类</h3><p>1、创建一个继承于Thread类的子类</p><p>2、重写Thread类的Run方法</p><p>3、实例化一个Thread类子类的对象</p><p>4、通过对象调用start()方法</p><p>① 启动当前线程</p><p>② 调用当前线程的run()方法</p><pre><code class="java">//线程一//1、创建一个子类继承Thread类class  MyThread extends Thread&#123;    //2、重写run方法    @Override    public void run() &#123;        for (int i = 0; i &lt; 1000; i++) &#123;            System.out.println(i);        &#125;    &#125;&#125;public class ThreadTest1 &#123;    public static void main(String[] args) &#123;        //3、实例化创建多线程子类        MyThread mt=new MyThread();        //通过多线程子类对象调用start方法        mt.start();        //以下语句在主线程执行        for (int i = 0; i &lt; 1000; i++) &#123;            System.out.println(&quot;主线程： &quot;+i);        &#125;    &#125;&#125;</code></pre><h3 id="多线程的创建方式二、实现Runnable接口"><a href="#多线程的创建方式二、实现Runnable接口" class="headerlink" title="多线程的创建方式二、实现Runnable接口"></a>多线程的创建方式二、实现Runnable接口</h3><p>1、创建一个实现了Runnable接口的类</p><p>2、实现类去实现Runnable中的抽象方法：run()</p><p>3、创建实现类的对象</p><p>4、将此对象作为参数传递到Thread类的构造器中，创建Thread类的对象</p><p>5、通过Thread类的对象调用start()</p><p>① 启动线程 </p><p>② 调用当前线程的run()———&gt;调用了Runnable类型的target</p><pre><code class="java">//1、创建一个实现了Runnable接口的类class My_thread4 implements Runnable&#123;    //2、实现类去实现Runnable中的抽象方法：run()    @Override    public void run() &#123;        for (int i = 0; i &lt; 100; i++) &#123;            if(i%2==1) System.out.println(Thread.currentThread().getName()+&quot;: &quot;+i);        &#125;    &#125;&#125;public class ThreadText5 &#123;    public static void main(String[] args) &#123;        //3、创建实现类的对象        My_thread4 t4=new My_thread4();        //4、将此对象作为参数传递到Thread类的构造器中，创建Thread类的对象        Thread thread1 = new Thread(t4);        thread1.setName(&quot;线程1 &quot;);        //5、通过Thread类的对象调用start();        //① 启动线程 ② 调用当前线程的run()———&gt;调用了Runnable类型的target        thread1.start();        //当用接口来实现创建线程时，多个线程执行一次run()，不需要写多个类        Thread thread2 = new Thread(t4);        thread2.setName(&quot;线程2 &quot;);        thread2.start();        //main线程        Thread.currentThread().setName(&quot;主线程 &quot;);        for (int i = 0; i &lt; 100; i++) &#123;            System.out.println(Thread.currentThread().getName()+&quot; &quot;+i);        &#125;    &#125;&#125;</code></pre><h3 id="多线程联系"><a href="#多线程联系" class="headerlink" title="多线程联系"></a>多线程联系</h3><pre><code class="java">//练习题//让线程1输出100以内的奇数，让线程2输出100以内的偶数public class ThreadTest2 &#123;    public static void main(String[] args) &#123;        //使用Thread匿名子类的方式创建线程(原因是只用一次，没必要专门写一个子类)        new Thread()        &#123;            @Override            public void run() &#123;                for (int i = 0; i &lt; 100; i++) &#123;                    if(i%2==1) System.out.println(Thread.currentThread().getName()+&quot;: &quot;+i);                &#125;            &#125;        &#125;.start();        new Thread()&#123;            @Override            public void run() &#123;                for (int i = 0; i &lt; 100; i++) &#123;                    if(i%2==0) System.out.println(Thread.currentThread().getName()+&quot;: &quot;+i);                &#125;            &#125;        &#125;.start();    &#125;&#125;</code></pre><h3 id="Thread中常用的方法"><a href="#Thread中常用的方法" class="headerlink" title="Thread中常用的方法:"></a><strong>Thread中常用的方法:</strong></h3><p>1.start()：启动当前线程，调用当前线程的run()</p><p>2.run():通常需要重写Thread类中的此方法，将创建的线程要执行的操作声明在此方法中</p><p>3.currentThread()：静态方法，返回执行当前代码的线程</p><p>4.getName()：获取当前线程的名字</p><p>5.setName()：设置当前线程的名字</p><p>6.yield()：释放当前cpu的执行权</p><p>7.join()：在线程a中调用线程b的join()，此时线程a就进入阻塞状态，直到线程b完全执行完以后，线程b才结束阻塞状态</p><p>8.sleep():让当前线程睡眠指定毫秒，在指定的毫秒内，当前线程是阻塞状态</p><h3 id="线程优先级"><a href="#线程优先级" class="headerlink" title="线程优先级"></a><strong>线程优先级</strong></h3><p><strong>1、线程的优先级等级</strong></p><p>MAX_PRIORITY:10   最大优先级</p><p>MIN_PRIORITY:1      最小优先级</p><p>NORM_PRIORITY:5   默认优先级</p><p><strong>2、涉及的方法</strong></p><p>getPriority()：返回线程优先值</p><p>setPriority(int newPriority):改变线程的优先级</p><p><strong>3、说明</strong></p><p>线程创建时继承父线程的优先级</p><p>低优先级只是获得调度的概率低，并非一定是在高优先级线程之后执行</p>]]></content:encoded>
+      
+      
+      
+      
+      <comments>http://example.com/2021/09/26/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Hello World</title>
